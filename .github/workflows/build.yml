@@ -45,7 +45,7 @@ jobs:
           APK=app/build/outputs/apk/release/app-release.apk
           if [ "${{ github.event_name }}" != "pull_request" ]; then
             test -f "$APK" || { echo "::error::Signed APK not produced"; exit 1; }
-            "$ANDROID_HOME"/build-tools/*/apksigner verify --print-certs "$APK" | head -3
+            BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1); "$BT/apksigner" verify --print-certs "$APK"
           fi
           mkdir -p out && cp app/build/outputs/apk/release/*.apk out/FreeMote.apk
 
