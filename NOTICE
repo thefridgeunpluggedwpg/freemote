@@ -1,0 +1,28 @@
+FreeMote
+Copyright (c) 2026 Kyler Kuehl and FreeMote contributors. Licensed under the MIT License (see LICENSE).
+
+This product includes material from the following projects:
+
+1. androidtvremote2 by tronikos — Apache License 2.0
+   https://github.com/tronikos/androidtvremote2 (commit e664a8e1f14ee458b14c646bfb3ea46f10367051)
+   - app/src/main/proto/polo.proto (copied unchanged)
+   - app/src/main/proto/remotemessage.proto (copied; FreeMote added two `option java_*` lines)
+   - The pairing-secret algorithm, pairing message sequence, remote handshake, feature flags
+     and IME text message shape were ported to Kotlin from pairing.py and remote.py.
+   - tools/make_pairing_vector.py contains the hash logic copied from pairing.py.
+   Full licence: third_party/androidtvremote2-LICENSE-Apache-2.0.txt
+
+2. androidtv-remote by louis49 — MIT License, Copyright (c) 2021 louis49
+   https://github.com/louis49/androidtv-remote (commit 0e82d72ec067b6452e0e2266720ba5e023821bf6)
+   - remotemessage.proto originates from this project (androidtvremote2's copy credits it).
+   Full licence: third_party/androidtv-remote-LICENSE-MIT.txt
+
+3. Google "google-tv-pairing-protocol" (polo), Apache License 2.0
+   https://android.googlesource.com/platform/external/google-tv-pairing-protocol/
+   - polo.proto and the pairing secret design originate from Google's polo implementation.
+
+Licence compatibility: Apache-2.0 and MIT material may be included in an MIT-licensed project
+provided the original licence texts and this NOTICE are kept, and modified files are marked
+(done above). Libraries used at runtime: Jetpack Compose / AndroidX (Apache-2.0),
+protobuf-javalite (BSD-3-Clause), Bouncy Castle (MIT-style Bouncy Castle licence),
+Kotlin coroutines (Apache-2.0).
